@@ -1,0 +1,192 @@
+/* VARIABLES GLOBALES (:root) */
+:root {
+    /* Fondo */
+    --FONDO_PRINCIPAL: #f4f6f9;
+    --FONDO_SECUNDARIO: #ffffff;
+
+    /* Texto */
+    --TEXTO_PRINCIPAL: #1f2937;
+    --TEXTO_SECUNDARIO: #4b5563;
+
+    /* Botones */
+    --BOTON_PRINCIPAL: #003366;
+    --BOTON_SECUNDARIO: #002244;
+
+    /* encabezado */
+    --COLOR_ENCABEZADO: #003366;
+    --TEXTO_ENCABEZADO: #ffffff;
+    
+    /* aside */
+    --FONDO_ASIDE: #e9ecef;
+
+    /* enlaces */
+    --COLOR_ENLACE: #0066cc;
+    --COLOR_ENLACE_HOVER: #004080;
+    
+    /* pie de pagina */
+    --COLOR_PIE_PAGINA: #1f2937;
+    --TEXTO_PIE_PAGINA: #ffffff;
+    
+    /* tipografía y bordes */
+    --FUENTE_BASE: Arial, sans-serif;
+    --COLOR_BORDE: #cccccc;
+    --RADIO_BORDE: 6px;
+    --SOMBRA_SUAVE: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* generales*/
+body {
+    font-family: var(--FUENTE_BASE);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--FONDO_PRINCIPAL);
+    color: var(--TEXTO_PRINCIPAL);
+}
+
+h1, h2, h3 {
+    color: var(--TEXTO_PRINCIPAL);
+}
+
+p, li {
+    color: var(--TEXTO_SECUNDARIO);
+}
+
+a {
+    color: var(--COLOR_ENLACE);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--COLOR_ENLACE_HOVER);
+}
+
+/* header y nav */
+header {
+    background-color: var(--COLOR_ENCABEZADO);
+    color: var(--TEXTO_ENCABEZADO);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+}
+
+header h1 {
+    color: var(--TEXTO_ENCABEZADO);
+    margin: 0;
+}
+
+header .logo img {
+    height: 50px;
+    vertical-align: middle;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: var(--TEXTO_ENCABEZADO);
+    font-weight: bold;
+}
+
+/* main */
+main {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+    gap: 20px;
+}
+
+.contenido-principal {
+    flex: 3;
+}
+
+article {
+    background-color: var(--FONDO_SECUNDARIO);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: var(--RADIO_BORDE);
+    box-shadow: var(--SOMBRA_SUAVE);
+}
+
+aside {
+    flex: 1;
+    background-color: var(--FONDO_ASIDE);
+    padding: 20px;
+    border-radius: var(--RADIO_BORDE);
+    height: fit-content;
+}
+
+/* formulario */
+.formulario-seccion {
+    background-color: var(--FONDO_SECUNDARIO);
+    padding: 30px;
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    border-radius: var(--RADIO_BORDE);
+    box-shadow: var(--SOMBRA_SUAVE);
+}
+
+form label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+    color: var(--TEXTO_PRINCIPAL);
+}
+
+form input, form select, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid var(--COLOR_BORDE);
+    border-radius: var(--RADIO_BORDE);
+    background-color: var(--FONDO_PRINCIPAL);
+    color: var(--TEXTO_PRINCIPAL);
+    box-sizing: border-box;
+}
+
+/* Estilos de Botones usando variables */
+button, input[type="submit"] {
+    margin-top: 20px;
+    padding: 12px 24px;
+    background-color: var(--BOTON_PRINCIPAL);
+    color: var(--TEXTO_ENCABEZADO);
+    border: none;
+    border-radius: var(--RADIO_BORDE);
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+button:hover, input[type="submit"]:hover {
+    background-color: var(--BOTON_SECUNDARIO);
+}
+
+/* footer */
+footer {
+    background-color: var(--COLOR_PIE_PAGINA);
+    color: var(--TEXTO_PIE_PAGINA);
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+footer p {
+    color: var(--TEXTO_PIE_PAGINA);
+}
+
+footer a {
+    color: var(--COLOR_ENLACE);
+}
