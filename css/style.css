@@ -1,5 +1,7 @@
 /* VARIABLES GLOBALES (:root) */
+
 :root {
+
     /* Fondo */
     --FONDO_PRINCIPAL: #f4f6f9;
     --FONDO_SECUNDARIO: #ffffff;
@@ -12,29 +14,35 @@
     --BOTON_PRINCIPAL: #003366;
     --BOTON_SECUNDARIO: #002244;
 
-    /* encabezado */
+    /* Encabezado */
     --COLOR_ENCABEZADO: #003366;
     --TEXTO_ENCABEZADO: #ffffff;
-    
-    /* aside */
+
+    /* Aside */
     --FONDO_ASIDE: #e9ecef;
 
-    /* enlaces */
+    /* Enlaces */
     --COLOR_ENLACE: #0066cc;
     --COLOR_ENLACE_HOVER: #004080;
-    
-    /* pie de pagina */
+
+    /* Pie de página */
     --COLOR_PIE_PAGINA: #1f2937;
     --TEXTO_PIE_PAGINA: #ffffff;
-    
-    /* tipografía y bordes */
+
+    /* Tipografía y bordes */
     --FUENTE_BASE: Arial, sans-serif;
     --COLOR_BORDE: #cccccc;
     --RADIO_BORDE: 6px;
     --SOMBRA_SUAVE: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
-/* generales*/
+
+/* GENERALES */
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: var(--FUENTE_BASE);
     line-height: 1.6;
@@ -44,12 +52,20 @@ body {
     color: var(--TEXTO_PRINCIPAL);
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     color: var(--TEXTO_PRINCIPAL);
 }
 
-p, li {
+p,
+li {
     color: var(--TEXTO_SECUNDARIO);
+}
+
+blockquote {
+    font-style: italic;
+    margin: 15px 0;
 }
 
 a {
@@ -61,19 +77,33 @@ a:hover {
     color: var(--COLOR_ENLACE_HOVER);
 }
 
-/* header y nav */
+
+/* HEADER Y NAV */
+
 header {
     background-color: var(--COLOR_ENCABEZADO);
     color: var(--TEXTO_ENCABEZADO);
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: 50px 30px;
+}
+
+#barra-superior {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 30px;
+    margin-bottom: 30px;
 }
 
 header h1 {
     color: var(--TEXTO_ENCABEZADO);
     margin: 0;
+}
+
+header p {
+    color: white;
+    font-size: 18px;
 }
 
 header .logo img {
@@ -97,18 +127,34 @@ nav ul li a {
     font-weight: bold;
 }
 
-/* main */
+
+/* MAIN */
+
 main {
     display: flex;
-    flex-wrap: wrap;
+    gap: 20px;
     padding: 20px;
     max-width: 1200px;
     margin: auto;
+    box-sizing: border-box;
+}
+
+#contenido-principal {
+    flex: 3;
+    min-width: 0;
+}
+
+#barra-lateral {
+    flex: 1;
+    min-width: 250px;
+    display: flex;
+    flex-direction: column;
     gap: 20px;
 }
 
-.contenido-principal {
-    flex: 3;
+#barra-lateral aside {
+    width: 100%;
+    box-sizing: border-box;
 }
 
 article {
@@ -120,14 +166,38 @@ article {
 }
 
 aside {
-    flex: 1;
     background-color: var(--FONDO_ASIDE);
     padding: 20px;
     border-radius: var(--RADIO_BORDE);
     height: fit-content;
 }
 
-/* formulario */
+
+/* TABLAS */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    background-color: var(--COLOR_ENCABEZADO);
+    color: var(--TEXTO_ENCABEZADO);
+}
+
+th,
+td {
+    padding: 12px;
+    text-align: left;
+}
+
+tr {
+    border-bottom: 1px solid var(--COLOR_BORDE);
+}
+
+
+/* FORMULARIO */
+
 .formulario-seccion {
     background-color: var(--FONDO_SECUNDARIO);
     padding: 30px;
@@ -145,7 +215,9 @@ form label {
     color: var(--TEXTO_PRINCIPAL);
 }
 
-form input, form select, form textarea {
+form input,
+form select,
+form textarea {
     width: 100%;
     padding: 10px;
     margin-top: 5px;
@@ -156,8 +228,11 @@ form input, form select, form textarea {
     box-sizing: border-box;
 }
 
-/* Estilos de Botones usando variables */
-button, input[type="submit"] {
+
+/* BOTONES */
+
+button,
+input[type="submit"] {
     margin-top: 20px;
     padding: 12px 24px;
     background-color: var(--BOTON_PRINCIPAL);
@@ -167,14 +242,61 @@ button, input[type="submit"] {
     cursor: pointer;
     font-size: 1rem;
     font-weight: bold;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-button:hover, input[type="submit"]:hover {
+button:hover,
+input[type="submit"]:hover {
     background-color: var(--BOTON_SECUNDARIO);
 }
 
-/* footer */
+.boton-aside {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 20px;
+    padding: 12px 24px;
+    background-color: var(--BOTON_PRINCIPAL);
+    color: var(--TEXTO_ENCABEZADO);
+    border-radius: var(--RADIO_BORDE);
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.boton-aside:hover {
+    background-color: var(--BOTON_SECUNDARIO);
+    color: var(--TEXTO_ENCABEZADO);
+}
+
+.boton-completo {
+    width: 100%;
+}
+
+/* Botón del header */
+
+.boton-header {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 24px;
+    background-color: white;
+    color: var(--BOTON_PRINCIPAL);
+    border: none;
+    border-radius: var(--RADIO_BORDE);
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.boton-header:hover {
+    background-color: var(--COLOR_ENLACE);
+    color: white;
+}
+
+/* FOOTER */
+
 footer {
     background-color: var(--COLOR_PIE_PAGINA);
     color: var(--TEXTO_PIE_PAGINA);

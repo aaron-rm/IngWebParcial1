@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cogn-IA: curso introductorio de inteligencia artificial aplicada a la educación.">
+    <title>Cogn-IA - Curso de IA aplicada a la educación</title>
+    <link rel="stylesheet" href="../css/style.css">
+
+    <style>
+        .card {
+            border-radius: var(--RADIO_BORDE);
+            border: 1px solid var(--COLOR_BORDE);
+            box-shadow: var(--SOMBRA_SUAVE);
+            padding: 10px;
+            min-width: 0;
+            overflow-wrap: break-word;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 20px;
+        }
+
+        @media (max-width: 900px) {
+            .grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 600px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .tutor {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .tutor img {
+            width: 160px;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 1px solid var(--COLOR_BORDE);
+        }
+
+        .tutor-info {
+            flex: 1;
+        }
+
+        .tutor-info strong {
+            display: block;
+            font-size: 1.2rem;
+            color: var(--TEXTO_PRINCIPAL);
+        }
+
+        .tutor-info span {
+            display: block;
+            margin-bottom: 10px;
+            color: var(--TEXTO_SECUNDARIO);
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            border: 1px solid var(--COLOR_BORDE);
+            border-radius: var(--RADIO_BORDE);
+            padding: 5px;
+            width: fit-content;
+        }
+
+        .card iframe {
+            width: 100%;
+            height: 200px;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+
+        <div id="barra-superior">
+
+            <div id="logo">
+                <img src="../img/logo.png" alt="Logo de Cogn-IA">
+            </div>
+
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="acerca.html">Acerca de</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+
+        </div>
+
+        <h1>Cogn-IA</h1>
+
+        <p>
+            Aprende a utilizar la inteligencia artificial como una herramienta
+            para mejorar el aprendizaje, la enseñanza y la creación de contenido educativo.
+        </p>
+
+        <a href="#contenido" class="boton-header">Conoce el curso</a>
+
+    </header>
+
+
+    <main>
+
+        <div id="contenido-principal">
+
+            <article>
+
+                <h2>¿Qué ofrecemos?</h2>
+
+                <p>
+                    Cogn-IA es una propuesta de formación introductoria centrada en el uso
+                    responsable y práctico de la inteligencia artificial en contextos educativos.
+                    El curso combina fundamentos, herramientas y actividades orientadas a que
+                    estudiantes y docentes puedan aprovechar estas tecnologías sin dejar de lado
+                    el pensamiento crítico y la participación humana.
+                </p>
+
+                <section class="grid">
+
+                    <div class="card">
+                        <h3>Aprendizaje práctico</h3>
+                        <p>
+                            Aprende mediante ejemplos y actividades relacionadas con situaciones
+                            reales de estudio y enseñanza.
+                        </p>
+                    </div>
+
+                    <div class="card">
+                        <h3>Uso responsable</h3>
+                        <p>
+                            Comprende los riesgos relacionados con la privacidad, los sesgos,
+                            la desinformación y el uso inadecuado de herramientas de IA.
+                        </p>
+                    </div>
+
+                    <div class="card">
+                        <h3>Herramientas de IA</h3>
+                        <p>
+                            Conoce diferentes tipos de herramientas de inteligencia artificial
+                            generativa y sus posibles aplicaciones educativas.
+                        </p>
+                    </div>
+
+                    <div class="card">
+                        <h3>Mejor organización</h3>
+                        <p>
+                            Utiliza la IA como apoyo para organizar ideas, resumir información
+                            y planificar actividades de aprendizaje.
+                        </p>
+                    </div>
+
+                    <div class="card">
+                        <h3>Creación de contenido</h3>
+                        <p>
+                            Aprende a utilizar herramientas de IA como apoyo para desarrollar
+                            materiales, preguntas, ejercicios y recursos educativos.
+                        </p>
+                    </div>
+
+                    <div class="card">
+                        <h3>Pensamiento crítico</h3>
+                        <p>
+                            Aprende a revisar y contrastar las respuestas generadas por la IA
+                            antes de utilizarlas en un contexto académico.
+                        </p>
+                    </div>
+
+                </section>
+
+            </article>
+
+
+            <article id="contenido">
+
+                <h2>Contenido del curso</h2>
+
+                <p>
+                    El programa está organizado en seis módulos progresivos. La propuesta
+                    combina conceptos fundamentales con actividades orientadas a la aplicación
+                    de la inteligencia artificial en procesos educativos.
+                </p>
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Módulo</th>
+                            <th>Enfoque principal</th>
+                            <th>Horas</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>01</td>
+                            <td>Fundamentos de IA</td>
+                            <td>Conceptos básicos, tipos de IA y aplicaciones actuales</td>
+                            <td>4</td>
+                        </tr>
+
+                        <tr>
+                            <td>02</td>
+                            <td>IA generativa</td>
+                            <td>Modelos de lenguaje, generación de contenido y limitaciones</td>
+                            <td>4</td>
+                        </tr>
+
+                        <tr>
+                            <td>03</td>
+                            <td>Prompts y verificación</td>
+                            <td>Redacción de instrucciones y revisión de respuestas generadas</td>
+                            <td>4</td>
+                        </tr>
+
+                        <tr>
+                            <td>04</td>
+                            <td>IA aplicada al aprendizaje</td>
+                            <td>Estudio, organización, práctica y creación de recursos</td>
+                            <td>4</td>
+                        </tr>
+
+                        <tr>
+                            <td>05</td>
+                            <td>Ética y uso responsable</td>
+                            <td>Privacidad, sesgos, pensamiento crítico y responsabilidad</td>
+                            <td>4</td>
+                        </tr>
+
+                        <tr>
+                            <td>06</td>
+                            <td>Proyecto final</td>
+                            <td>Diseño de una propuesta educativa apoyada por IA</td>
+                            <td>4</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </article>
+
+
+            <article>
+                <h2>Nuestro tutor</h2>
+
+                <div class="tutor">
+
+                    <img src="../img/tutor.jpg" alt="Dr. Daniel Herrera, especialista en tecnología educativa">
+
+                    <div class="tutor-info">
+
+                        <strong>Dr. Daniel Herrera</strong>
+                        <span>Especialista en tecnología educativa e inteligencia artificial</span>
+
+                        <p>
+                            Daniel Herrera es profesional del área de tecnología educativa,
+                            con experiencia en integración de herramientas digitales en
+                            procesos de aprendizaje y formación docente.
+                        </p>
+
+                        <p>
+                            En Cogn-IA, su enfoque se centra en enseñar el uso de la
+                            inteligencia artificial como herramienta de apoyo, fomentando
+                            la verificación de la información, el pensamiento crítico y
+                            el uso responsable de estas tecnologías.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <article id="planes">
+
+                <h2>Planes</h2>
+
+                <p>
+                    Elige la modalidad que mejor se adapte a tu forma de aprendizaje.
+                    Los siguientes precios forman parte de la propuesta académica de Cogn-IA.
+                </p>
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Plan</th>
+                            <th>Precio</th>
+                            <th>Modalidad</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>Plan Básico</td>
+                            <td>$25</td>
+                            <td>Acceso al contenido</td>
+                            <td><a href="#">Inscribirme</a></td>
+                        </tr>
+
+                        <tr>
+                            <td>Plan Completo</td>
+                            <td>$40</td>
+                            <td>Contenido + actividades</td>
+                            <td><a href="#">Inscribirme</a></td>
+                        </tr>
+
+                        <tr>
+                            <td>Plan Premium</td>
+                            <td>$55</td>
+                            <td>Contenido + actividades + proyecto final</td>
+                            <td><a href="#">Inscribirme</a></td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </article>
+
+
+            <article>
+
+                <h2>Introducción al curso</h2>
+
+                <p>
+                    Antes de comenzar, conoce algunos conceptos fundamentales sobre la relación
+                    entre inteligencia artificial y educación.
+                </p>
+
+                <section class="grid">
+
+                    <div class="card">
+
+                        <iframe
+                            src="https://www.youtube.com/embed/8lMIdrlIWOQ"
+                            title="¿Qué es la inteligencia artificial?"
+                            allowfullscreen>
+                        </iframe>
+
+                        <hr>
+
+                        <h3>¿Qué es la inteligencia artificial?</h3>
+
+                        <p>
+                            Una introducción a los conceptos básicos de la IA y a la forma en
+                            que estas tecnologías pueden procesar información y generar resultados.
+                        </p>
+
+                    </div>
+
+
+                    <div class="card">
+
+                        <iframe
+                            src="https://www.youtube.com/embed/Qu7spkaiky0"
+                            title="Inteligencia artificial generativa en educación"
+                            allowfullscreen>
+                        </iframe>
+
+                        <hr>
+
+                        <h3>IA generativa y aprendizaje</h3>
+
+                        <p>
+                            Descubre qué caracteriza a la IA generativa y por qué ha adquirido
+                            relevancia en la creación de textos, imágenes y otros contenidos.
+                        </p>
+
+                    </div>
+
+
+                    <div class="card">
+
+                        <iframe
+                            src="https://www.youtube.com/embed/TXxJGTrKRxM"
+                            title="Uso responsable de la inteligencia artificial en el aula"
+                            allowfullscreen>
+                        </iframe>
+
+                        <hr>
+
+                        <h3>Uso responsable de la IA</h3>
+
+                        <p>
+                            Conoce algunos de los principales aspectos que deben considerarse
+                            al utilizar inteligencia artificial dentro de un contexto educativo.
+                        </p>
+
+                    </div>
+
+                </section>
+
+            </article>
+
+
+            <article>
+
+                <h2>Recursos externos</h2>
+
+                <p>
+                    Para ampliar los contenidos del curso, recomendamos consultar fuentes
+                    especializadas y organismos internacionales que trabajan sobre inteligencia
+                    artificial, educación y competencias digitales.
+                </p>
+
+                <ul style="list-style: none;">
+
+                    <li>
+
+                        <a href="https://www.unesco.org/es/digital-education/artificial-intelligence"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            UNESCO — Inteligencia artificial y educación
+                        </a>
+
+                        <p>
+                            Información y recursos de la UNESCO sobre el uso de la inteligencia
+                            artificial en educación, incluyendo orientaciones para un uso
+                            seguro, ético y centrado en las personas.
+                        </p>
+
+                    </li>
+
+
+                    <li>
+
+                        <a href="https://www.oecd.org/en/topics/artificial-intelligence-and-education-and-skills.html"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            OECD — Artificial intelligence and education and skills
+                        </a>
+
+                        <p>
+                            Recursos de la OCDE sobre las implicaciones de la inteligencia
+                            artificial para la educación, las habilidades y el aprendizaje.
+                        </p>
+
+                    </li>
+
+                </ul>
+
+            </article>
+
+        </div>
+
+
+        <div id="barra-lateral">
+
+            <aside>
+
+                <h3>Datos generales</h3>
+
+                <p><strong>Duración:</strong> 24 horas</p>
+                <p><strong>Módulos:</strong> 6</p>
+                <p><strong>Modalidad:</strong> En línea</p>
+                <p><strong>Nivel:</strong> Inicial</p>
+                <p><strong>Enfoque:</strong> Educativo y práctico</p>
+
+                <h4>Comienza a aprender</h4>
+
+                <p>
+                    Descubre cómo integrar la inteligencia artificial en tus procesos
+                    de aprendizaje de forma consciente y responsable.
+                </p>
+
+                <a href="#planes" class="boton-aside">Inscríbete</a>
+
+            </aside>
+
+
+            <aside>
+
+                <h3>Testimonios</h3>
+
+                    <blockquote>
+                        "Antes utilizaba herramientas de IA solo para buscar respuestas.
+                        Ahora sé cómo utilizarlas para organizar mis ideas y comprobar la
+                        información antes de entregar un trabajo."
+                        <cite>— Valeria González, estudiante universitaria</cite>
+                    </blockquote>
+
+                    <hr>
+
+                    <blockquote>
+                        "El curso me ayudó a entender que incorporar IA en el aula no
+                        consiste solamente en usar una herramienta, sino en saber cuándo
+                        y cómo utilizarla."
+                        <cite>— Andrés Rodríguez, docente de secundaria</cite>
+                    </blockquote>
+
+            </aside>
+
+
+            <aside>
+
+                <h3>Etiquetas / Tags</h3>
+
+                <section class="tags">
+
+                    <div class="tag">Inteligencia artificial</div>
+                    <div class="tag">Educación</div>
+                    <div class="tag">IA generativa</div>
+                    <div class="tag">Aprendizaje</div>
+                    <div class="tag">Tecnología</div>
+                    <div class="tag">Ética</div>
+                    <div class="tag">Pensamiento crítico</div>
+                    <div class="tag">Innovación</div>
+
+                </section>
+
+            </aside>
+
+
+            <aside>
+
+                <h3>Boletín informativo</h3>
+
+                <p>
+                    Recibe novedades y recursos relacionados con inteligencia artificial
+                    y educación directamente en tu correo.
+                </p>
+
+                <form>
+
+                    <input
+                        type="email"
+                        placeholder="correo@ejemplo.com"
+                        required>
+
+                    <button style="width: 100%;" type="submit">
+                        Suscribirme
+                    </button>
+
+                </form>
+
+            </aside>
+
+        </div>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            © 2026 Cogn-IA — Todos los derechos reservados
+        </p>
+
+        <a href="#">Términos y condiciones</a> ·
+        <a href="#">Política de privacidad</a> ·
+        <a href="#">Soporte</a>
+
+        <br>
+
+        Síguenos en:
+
+        <a href="https://www.facebook.com"
+           target="_blank"
+           rel="noopener noreferrer">
+            Facebook
+        </a> ·
+
+        <a href="https://www.instagram.com"
+           target="_blank"
+           rel="noopener noreferrer">
+            Instagram
+        </a> ·
+
+        <a href="https://x.com"
+           target="_blank"
+           rel="noopener noreferrer">
+            X
+        </a> ·
+
+        <a href="https://www.linkedin.com"
+           target="_blank"
+           rel="noopener noreferrer">
+            LinkedIn
+        </a> ·
+
+        <a href="https://www.youtube.com"
+           target="_blank"
+           rel="noopener noreferrer">
+            YouTube
+        </a>
+
+    </footer>
+
+</body>
+
+</html>
