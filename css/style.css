@@ -1,5 +1,4 @@
 /* VARIABLES GLOBALES (:root) */
-
 :root {
 
     /* Fondo */
@@ -38,7 +37,6 @@
 
 
 /* GENERALES */
-
 html {
     scroll-behavior: smooth;
 }
@@ -52,14 +50,11 @@ body {
     color: var(--TEXTO_PRINCIPAL);
 }
 
-h1,
-h2,
-h3 {
+h1,h2,h3 {
     color: var(--TEXTO_PRINCIPAL);
 }
 
-p,
-li {
+p,li {
     color: var(--TEXTO_SECUNDARIO);
 }
 
@@ -79,7 +74,6 @@ a:hover {
 
 
 /* HEADER Y NAV */
-
 header {
     background-color: var(--COLOR_ENCABEZADO);
     color: var(--TEXTO_ENCABEZADO);
@@ -93,7 +87,6 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 30px;
 }
 
 header h1 {
@@ -106,9 +99,11 @@ header p {
     font-size: 18px;
 }
 
-header .logo img {
-    height: 50px;
-    vertical-align: middle;
+header .logo, header img {
+    width: 100px;
+    gap: 0px;
+    margin: 0px;
+    border-radius: var(--RADIO_BORDE);
 }
 
 nav ul {
@@ -311,4 +306,83 @@ footer p {
 
 footer a {
     color: var(--COLOR_ENLACE);
+}
+
+
+/* CARDS, GRID, TUTOR Y COMPONENTES ADICIONALES */
+
+.card {
+    border-radius: var(--RADIO_BORDE);
+    border: 1px solid var(--COLOR_BORDE);
+    box-shadow: var(--SOMBRA_SUAVE);
+    padding: 10px;
+    min-width: 0;
+    overflow-wrap: break-word;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+@media (max-width: 900px) {
+    .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.tutor {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.tutor img {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 1px solid var(--COLOR_BORDE);
+}
+
+.tutor-info {
+    flex: 1;
+}
+
+.tutor-info strong {
+    display: block;
+    font-size: 1.2rem;
+    color: var(--TEXTO_PRINCIPAL);
+}
+
+.tutor-info span {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--TEXTO_SECUNDARIO);
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tag {
+    border: 1px solid var(--COLOR_BORDE);
+    border-radius: var(--RADIO_BORDE);
+    padding: 5px;
+    width: fit-content;
+}
+
+.card iframe {
+    width: 100%;
+    height: 200px;
+    border: none;
 }
