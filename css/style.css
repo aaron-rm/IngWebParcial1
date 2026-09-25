@@ -386,3 +386,12 @@ footer a {
     height: 200px;
     border: none;
 }
+
+.red-social {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.equipo {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
